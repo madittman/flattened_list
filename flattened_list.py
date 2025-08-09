@@ -34,13 +34,13 @@ class FlattenedList:
 
     def add_dimension(self, name: str) -> None:
         if name in self.dimensions:
-            raise Exception(f"Dimension name {name} already exists!")
+            raise Exception(f"Dimension name {name} already exists")
         self.dimensions.append(name)
 
     def add_sublists(self, new_sublists: List[list]) -> None:
         for new_sublist in new_sublists:
             if len(new_sublist) != len(self.dimensions):
-                raise Exception(f"Sublist {new_sublist} has wrong dimension!")
+                raise Exception(f"Sublist {new_sublist} has wrong dimension")
             if new_sublist in self.list:
                 raise Exception(f"Sublist {new_sublist} already in list")
 
@@ -48,4 +48,3 @@ class FlattenedList:
 
         self.list.extend(new_sublists)
         self.list.sort()
-        # print("->", self.list)
