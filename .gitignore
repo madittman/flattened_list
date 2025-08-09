@@ -1,0 +1,8 @@
+# created by virtualenv automatically
+.venv/
+.idea/
+.pytest_cache/
+__pycache__/
+
+# local test file
+mytest.py
