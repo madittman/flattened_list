@@ -27,3 +27,6 @@ if __name__ == '__main__':
         ]
     )
     print(my_list)
+
+    my_list.remove_last_dimension()
+    print(my_list)

@@ -37,6 +37,14 @@ class FlattenedList:
             raise Exception(f"Dimension name {name} already exists")
         self.dimensions.append(name)
 
+    def remove_last_dimension(self) -> None:
+        if not self.dimensions:
+            raise Exception(f"No dimension to remove")
+        self.dimensions.pop()
+        for sublist in self.list:
+            if len(sublist) > len(self.dimensions):  # only shrink sublists by one dimension
+                sublist.pop()
+
     def add_sublists(self, new_sublists: List[list]) -> None:
         for new_sublist in new_sublists:
             if len(new_sublist) != len(self.dimensions):
